@@ -9,7 +9,7 @@ import { navigationConfig } from './route'
 import { bubbleStore } from '@store/bubble-store'
 import { TabName } from 'src/enum/common-enum'
 import { observer } from 'mobx-react'
-// import { Badge } from 'teaset'
+import { Badge } from 'teaset'
 
 const TabStack = createBottomTabNavigator()
 const PageStack = createStackNavigator()
@@ -34,7 +34,7 @@ const TabIconComponent = observer(props => {
             <Image source={iconName} style={styles.tabImage} />
             {badgeCount > 0 && (
                 <View style={styles.tabTextContainer}>
-                    {/* <Badge type={'capsule'} count={badgeCount} /> */}
+                    <Badge type={'capsule'} count={badgeCount} />
                 </View>
             )}
         </View>

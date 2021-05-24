@@ -26,7 +26,8 @@
     "react-native-network-logger": "1.8.0",
     "react-native-reanimated": "1.13.1",
     "react-native-safe-area-context": "3.1.8",
-    "react-native-screens": "2.11.0"
+    "react-native-screens": "2.11.0",
+    "teaset": "git+https://gitlab.x.yunio.com/app/react-native/plugin/teaset.git"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
