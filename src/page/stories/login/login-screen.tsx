@@ -18,12 +18,14 @@ export default function LoginScreen() {
             <Button
                 title='登录'
                 onPress={() => {
-                    userService.login().then((data: any) => {
-                        if (data) {
-                            userStore.setToken(data?.token)
+                    // userService.login().then((data: any) => {
+                    //     if (data) {
+                    //         userStore.setToken(data?.token)
+                    //         authContext.dispatch({ type: RouteType.Main })
+                    //     }
+                    // })
+                    userStore.setToken("token")
                             authContext.dispatch({ type: RouteType.Main })
-                        }
-                    })
                 }}
             />
         </View>

@@ -10,6 +10,7 @@ import { bubbleStore } from '@store/bubble-store'
 import { TabName } from 'src/enum/common-enum'
 import { observer } from 'mobx-react'
 import { Badge } from 'teaset'
+import { DemoScreen } from '@page/stories/demo/demo-screen'
 
 const TabStack = createBottomTabNavigator()
 const PageStack = createStackNavigator()
@@ -20,6 +21,10 @@ const TabIconComponent = observer(props => {
     let iconName
     let badgeCount
     switch (routeName) {
+        case TabName.Demo:
+            iconName = focused ? TabAsset.homeActive : TabAsset.home
+            badgeCount = bubbleStore.tabBubble.Home
+            break
         case TabName.Home:
             iconName = focused ? TabAsset.homeActive : TabAsset.home
             badgeCount = bubbleStore.tabBubble.Home
@@ -55,6 +60,7 @@ function Tab() {
                 inactiveTintColor: 'gray'
             }}
         >
+            <TabStack.Screen name='Demo' component={DemoScreen} />
             <TabStack.Screen name='Home' component={HomeScreen} />
             <TabStack.Screen name='Profile' component={ProfileScreen} />
         </TabStack.Navigator>
